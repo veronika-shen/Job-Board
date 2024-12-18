@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+/* line 1, ../../Arafath/CL/December/235. Job board/HTML/scss/_extend.scss */
+
+body {
+    width: 500px;
+    margin: auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background: linear-gradient(135deg, cornflowerblue, lawngreen);
+    height: 100vh;
+}
+
+form{
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    background: #FFF;
+    animation: fadeIn 0.5s ease;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Roboto", sans-serif;
+    color: #191d34;
+}
+
+select, input {
+    width: 80%;
+    height: 50px;
+    background: transparent;
+    padding-left: 20px;
+    font-size: 15px;
+    border: none;
+    border: 1px solid #334A60;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    font-size: 14px;
+    color: #AAB1B7;
+}
+
+select, input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02);
+}
+
+input[type='submit']{
+    text-decoration: none;
+    width: 80%;
+    height: 50px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    background: #00D363;
+    padding: 10px;
+    padding: 0 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    top: 5px;
+    right: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    сursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type='submit']:hover{
+    box-shadow: 0 0 5px greenyellow,
+    0 0 25px lawngreen;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+label{
+    letter-spacing: 2px;
+    color: #1c7430;
+}
+
+input[type='checkbox']{
+    width: 25px;
+}
+
+.myJobs{
+    width: 90%;
+    margin: auto;
+    background: #FFF;
+}
+
+.myJobs header{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+.cards-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:10px;
+
+}
+
+.job-card{
+    border: 3px solid black;
+    border-radius: 8px;
+    padding:10px;
+    width: 200px;
+}
+
+.job-card a{
+    text-decoration: none;
+    font-weight: 700;
+}
