@@ -2,7 +2,7 @@
 session_start();
 
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 $categories = $pdo->query("SELECT * FROM categories")->fetchAll();
 $employments = $pdo->query("SELECT * FROM employment")->fetchAll();
@@ -38,20 +38,19 @@ if ($categorySql){
 }
 $jobs = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 $sorting = $_GET['sorting'] ?? 'most_recent';
-//
-//if ($sorting === 'most_recent') {
-//    $sql .= " ORDER BY jobs.date DESC";
-//} elseif ($sorting === 'oldest') {
-//    $sql .= " ORDER BY jobs.date ASC";
-//} elseif ($sorting === 'highest_salary') {
-//    $sql .= " ORDER BY jobs.max_salary DESC";
-//} elseif ($sorting === 'lowest_salary') {
-//    $sql .= " ORDER BY jobs.max_salary ASC";
-//}
-//
-//$stmt = $pdo->prepare($sql);
-//$stmt->execute($params);
-//$jobs = $stmt->fetchAll();
+
+if ($sorting === 'most_recent') {
+    $sql .= " ORDER BY jobs.published_on DESC";
+} elseif ($sorting === 'oldest') {
+    $sql .= " ORDER BY jobs.published_on ASC";
+} elseif ($sorting === 'highest_salary') {
+    $sql .= " ORDER BY jobs.salary DESC";
+} elseif ($sorting === 'lowest_salary') {
+    $sql .= " ORDER BY jobs.salary ASC";
+}
+
+$stmt = $pdo->query($sql);
+$jobs = $stmt->fetchAll();
 ?>
 
 <!doctype html>
@@ -187,7 +186,7 @@ $sorting = $_GET['sorting'] ?? 'most_recent';
                             </div>
 
                             <div class="reset_btn">
-                                <a href="/jobboard2/jobs.php" class="boxed-btn3 w-100"">Reset</a>
+                                <a href="/jobboard2/Job-Board/jobs.php" class="boxed-btn3 w-100"">Reset</a>
                             </div>
                     </div>
                 </div>
@@ -240,7 +239,7 @@ $sorting = $_GET['sorting'] ?? 'most_recent';
                                         <img src="/image/" alt="logo">
                                     </div>
                                     <div class="jobs_conetent">
-                                        <a href="/jobboard2/job_details.php?id=<?= $job['id'] ?>">
+                                        <a href="/jobboard2/Job-Board/job_details.php?id=<?= $job['id'] ?>">
                                             <h4><?= $job['name'] ?></h4>
                                         </a>
                                         <div class="links_locat d-flex align-items-center">
@@ -255,7 +254,7 @@ $sorting = $_GET['sorting'] ?? 'most_recent';
                                 </div>
                                 <div class="jobs_right">
                                     <div class="apply_now">
-                                        <a href="/jobboard2/job_details.php?id=<?= $job['id'] ?>" class="boxed-btn3">Apply
+                                        <a href="/jobboard2/Job-Board/job_details.php?id=<?= $job['id'] ?>" class="boxed-btn3">Apply
                                             Now</a>
                                     </div>
                                     <div class="date">

@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
 isAdmin();
 
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 $employments = $pdo->query("SELECT * FROM employment")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -21,11 +21,11 @@ $employments = $pdo->query("SELECT * FROM employment")->fetchAll(PDO::FETCH_ASSO
 </head>
 <body>
 <header>
-    <a href="/jobboard2/admin/">Admin</a>
+    <a href="/jobboard2/Job-Board/admin/">Admin</a>
 </header>
 <main>
     <h1>Employments</h1>
-    <a href="/jobboard2/admin/crud-employments/create.php">Create employment</a>
+    <a href="/jobboard2/Job-Board/admin/crud-employments/create.php">Create employment</a>
     <table>
         <thead>
         <tr>
@@ -38,8 +38,8 @@ $employments = $pdo->query("SELECT * FROM employment")->fetchAll(PDO::FETCH_ASSO
         <tr>
             <td><?= $employment['id']?></td>
             <td><?= $employment['name']?></td>
-            <td><a href="/jobboard2/admin/crud-employments/edit.php?id=<?= $employment['id']?>">Edit</a></td>
-            <td><a href="/jobboard2/admin/crud-employments/actions/delete.php?id=<?= $employment['id']?>">Delete</a></td>
+            <td><a href="/jobboard2/Job-Board/admin/crud-employments/edit.php?id=<?= $employment['id']?>">Edit</a></td>
+            <td><a href="/jobboard2/Job-Board/admin/crud-employments/actions/delete.php?id=<?= $employment['id']?>">Delete</a></td>
         </tr>
         </tbody>
         <?php endforeach; ?>

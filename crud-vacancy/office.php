@@ -1,7 +1,7 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 session_start();
 sessionOn();
@@ -19,8 +19,8 @@ $company = $pdo->query("SELECT * FROM companies WHERE id = '$id'")->fetch(PDO::F
     <title>Job Board</title>
 </head>
 <body>
-<a href="/jobboard2/">Home page</a>
-<a href="/jobboard2/crud-vacancy/myJobs.php">My jobs</a>
+<a href="/jobboard2/Job-Board/">Home page</a>
+<a href="/jobboard2/Job-Board/crud-vacancy/myJobs.php">My jobs</a>
 <h1>My office</h1>
 <form action="actions/edit_office.php" method="post" enctype="multipart/form-data">
     <input type="text" name="name" value="<?= $company['name']?>">

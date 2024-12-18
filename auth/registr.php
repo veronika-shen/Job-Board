@@ -1,6 +1,6 @@
 <?php
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 session_start();
 
@@ -14,5 +14,5 @@ $company_id = $pdo->lastInsertId();
 
 $_SESSION['company_id'] = $company_id;
 
-header('Location: /jobboard2/index.php');
+header('Location: /jobboard2/Job-Board/index.php');
 

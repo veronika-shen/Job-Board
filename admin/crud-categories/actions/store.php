@@ -8,4 +8,4 @@ $is_popular = isset($_POST['is_popular']) ? 1 : 0;
 
 $pdo->query("INSERT INTO categories (name,is_popular) VALUES ('$name','$is_popular')");
 
-header("location: /jobboard2/admin/crud-categories/index.php");
+header("location: /jobboard2/Job-Board/admin/crud-categories/index.php");

@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
 isAdmin();
 
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 $category = $pdo->query("SELECT * FROM categories")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -21,11 +21,11 @@ $category = $pdo->query("SELECT * FROM categories")->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <header>
-    <a href="/jobboard2/admin/">Admin</a>
+    <a href="/jobboard2/Job-Board/admin/">Admin</a>
 </header>
 <main>
     <h1>Categories</h1>
-    <a href="/jobboard2/admin/crud-categories/create.php">Create category</a>
+    <a href="/jobboard2/Job-Board/admin/crud-categories/create.php">Create category</a>
     <table>
         <thead>
         <tr>
@@ -46,8 +46,8 @@ $category = $pdo->query("SELECT * FROM categories")->fetchAll(PDO::FETCH_ASSOC);
                     No popular
                 <?php endif; ?>
             </td>
-            <td><a href="/jobboard2/admin/crud-categories/edit.php?id=<?= $category['id']?>&name=<?= $category['name']?>">Edit</a></td>
-            <td><a href="/jobboard2/admin/crud-categories/actions/delete.php?id=<?= $category['id']?>">Delete</a></td>
+            <td><a href="/jobboard2/Job-Board/admin/crud-categories/edit.php?id=<?= $category['id']?>&name=<?= $category['name']?>">Edit</a></td>
+            <td><a href="/jobboard2/Job-Board/admin/crud-categories/actions/delete.php?id=<?= $category['id']?>">Delete</a></td>
         </tr>
         </tbody>
         <?php endforeach; ?>

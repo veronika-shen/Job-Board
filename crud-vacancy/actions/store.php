@@ -2,8 +2,8 @@
 session_start();
 
 /** @var PDO $pdo */
-$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
+$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
 sessionOn();
 
 $name = $_POST['name'];
@@ -24,4 +24,4 @@ $pdo->query(
     "INSERT INTO jobs(name, slug, salary, category_id, employment_id, experience, skill_level, published_on, description, active, vacancy, company_id)
             VALUES ('$name','$slug','$salary','$category','$employment','$experience','$skills','$published_on','$description','$active','$vacancy','$company')");
 
-header('Location: /jobboard2/crud-vacancy/myJobs.php');
+header('Location: /jobboard2/Job-Board/crud-vacancy/myJobs.php');

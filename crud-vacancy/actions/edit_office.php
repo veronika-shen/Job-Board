@@ -1,7 +1,7 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 session_start();
 sessionOn();
@@ -18,4 +18,4 @@ if(!empty($_FILES['logo']['tmp_name'])){
 
 $pdo->query("UPDATE companies SET name='$name', image='$path' WHERE id='$id'");
 
-header('location: /jobboard2/crud-vacancy/office.php');
+header('location: /jobboard2/Job-Board/crud-vacancy/office.php');

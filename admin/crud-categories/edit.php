@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
 isAdmin();
 
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 $id = $_GET['id'];
 $name = $_GET['name'];

@@ -1,8 +1,8 @@
 <?php
 
 
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 session_start();
 sessionOn();
@@ -23,7 +23,7 @@ $responses = $pdo->query("SELECT * FROM responses WHERE job_id = '$job_id'")->fe
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/jobboard2/css/myStyle.css">
+    <link rel="stylesheet" href="/jobboard2/Job-Board/css/myStyle.css">
     <title>Job Board</title>
 </head>
 <body>

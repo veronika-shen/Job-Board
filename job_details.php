@@ -7,7 +7,7 @@ $auth = isset($_SESSION['company_id']) ? 1 : 0;
 $admin = isset($_SESSION['company_id']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1 ? 1 : 0;
 
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/Job-Board/database.php';
 
 $id = $_GET['id'];
 

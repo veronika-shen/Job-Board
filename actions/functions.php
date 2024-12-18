@@ -3,21 +3,21 @@
 function sessionOn()
 {
     if(!isset($_SESSION['company_id'])){
-        header('location: /jobboard2/login.html');
+        header('location: /jobboard2/Job-Board/login.html');
     }
 }
 
 function isAdmin()
 {
     if(!isset($_SESSION['company_id']) && $_SESSION['isAdmin'] == 1){
-        header('location: /jobboard2/login.html');
+        header('location: /jobboard2/Job-Board/login.html');
     }
 }
 
 function isNotAdmin()
 {
     if(!isset($_SESSION['company_id']) && $_SESSION['isAdmin'] == 0){
-        header('location: /jobboard2/login.html');
+        header('location: /jobboard2/Job-Board/login.html');
     }
 }
 

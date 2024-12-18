@@ -6,18 +6,20 @@ $auth = isset($_SESSION['company_id']) ? 1 : 0;
 $admin = isset($_SESSION['company_id']) && isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1 ? 1 : 0;
 
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/Job-Board/database.php';
 
 
 
 $popularCategories = $pdo->query("SELECT categories.*, SUM(jobs.vacancy) AS avialble_pos
                                         FROM categories 
                                         left join jobs on categories.id = jobs.category_id
-                                        WHERE is_popular = 1")->fetchAll(PDO::FETCH_ASSOC);
-var_dump($popularCategories);
+                                        WHERE is_popular = 1
+                                        group by categories.id")->fetchAll(PDO::FETCH_ASSOC);
+
 $companies = $pdo->query("SELECT companies.*, SUM(jobs.vacancy) AS avialble_pos 
                                         FROM companies 
-                                        left join jobs on companies.id = jobs.company_id")->fetchAll(PDO::FETCH_ASSOC);
+                                        left join jobs on companies.id = jobs.company_id
+                                        group by companies.id")->fetchAll(PDO::FETCH_ASSOC);
 
 $jobListing = $pdo->query("SELECT * FROM jobs ORDER BY `id` DESC LIMIT 5")->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -99,9 +101,9 @@ $jobListing = $pdo->query("SELECT * FROM jobs ORDER BY `id` DESC LIMIT 5")->fetc
                                 <div class="Appointment">
                                     <div class="phone_num d-none d-xl-block">
                                         <?php if(($auth == 1)&&($admin == 0)) :?>
-                                            <a href="/jobboard2/crud-vacancy/myJobs.php">My jobs</a> | <a href="/jobboard2/crud-vacancy/exit.php">Exit</a>
+                                            <a href="/jobboard2/Job-Board/crud-vacancy/myJobs.php">My jobs</a> | <a href="/jobboard2/Job-Board/crud-vacancy/exit.php">Exit</a>
                                         <?php elseif($admin == 1):?>
-                                            <a href="/jobboard2/admin/">Admin</a> | <a href="/jobboard2/crud-vacancy/exit.php">Exit</a>
+                                            <a href="/jobboard2/Job-Board/admin/">Admin</a> | <a href="/jobboard2/Job-Board/crud-vacancy/exit.php">Exit</a>
                                         <?php else:?>
                                         <a href="login.html">Log in</a>
                                         <?php endif;?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/actions/functions.php';
+require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/Job-Board/actions/functions.php';
 isAdmin();
 ?>
 
@@ -17,6 +17,6 @@ isAdmin();
     <h1>Admin</h1>
     <a href="crud-categories/">Categories</a>
     <a href="crud-employments/">Employments</a>
-    <a href="/jobboard2/index.php">Main</a>
+    <a href="/jobboard2/Job-Board/index.php">Main</a>
 </body>
 </html>

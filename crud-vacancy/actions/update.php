@@ -1,10 +1,10 @@
 <?php
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
 sessionOn();
 
 /** @var PDO $pdo */
-$pdo = require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/database.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/Job-Board/database.php';
 $id = $_POST['id'];
 $name = $_POST['name'];
 $category = $_POST['category'];
@@ -19,4 +19,4 @@ $active = isset($_POST['active']) ? 1 : 0;
 $pdo->query("UPDATE jobs SET name='$name', category_id='$category', salary='$salary', employment_id='$employment', experience='$experience',
                 skill_level='$skill_level', published_on='$published', description='$description', active='$active' WHERE id='$id' ");
 
-header("location: /jobboard2/crud-vacancy/myJobs.php");
+header("location: /jobboard2/Job-Board/crud-vacancy/myJobs.php");

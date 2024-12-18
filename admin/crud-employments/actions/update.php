@@ -8,4 +8,4 @@ $name = $_POST['name'];
 
 $pdo->query("UPDATE employment SET name = '$name' WHERE id = '$id'");
 
-header("location: /jobboard2/admin/crud-employments/index.php");
+header("location: /jobboard2/Job-Board/admin/crud-employments/index.php");

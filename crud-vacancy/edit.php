@@ -1,6 +1,6 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
-$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
+$pdo = require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 session_start();
 sessionOn();
@@ -21,7 +21,7 @@ $employments = $pdo->query("SELECT * FROM employment");
     </head>
     <body>
     <h1>Edit job</h1>
-    <form action="/jobboard2/crud-vacancy/actions/update.php" method="post">
+    <form action="/jobboard2/Job-Board/crud-vacancy/actions/update.php" method="post">
         <h1>Post a job</h1>
 
         <input type="text" name="name" placeholder="Name job">

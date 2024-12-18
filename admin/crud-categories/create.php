@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/actions/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/actions/functions.php';
 isAdmin();
 
 ?>

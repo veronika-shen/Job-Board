@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/actions/functions.php';
+require $_SERVER['DOCUMENT_ROOT'].'/jobboard2/Job-Board/actions/functions.php';
 sessionOn();
 
 /** @var PDO $pdo */
-$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/database.php';
+$pdo = require_once $_SERVER['DOCUMENT_ROOT'] . '/jobboard2/Job-Board/database.php';
 
 $categories = $pdo->query("SELECT * FROM categories");
 $employments = $pdo->query("SELECT * FROM employment");
@@ -15,11 +15,11 @@ $employments = $pdo->query("SELECT * FROM employment");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/jobboard2/css/myStyle.css">
+    <link rel="stylesheet" href="/jobboard2/Job-Board/css/myStyle.css">
     <title>Job Board</title>
 </head>
 <body>
-<form action="/jobboard2/crud-vacancy/actions/store.php" method="post">
+<form action="/jobboard2/Job-Board/crud-vacancy/actions/store.php" method="post">
     <h1>Post a job</h1>
 
     <input type="text" name="name" placeholder="Name job">

@@ -16,7 +16,7 @@ isAdmin();
 </head>
 <body>
         <h1>Create employment</h1>
-<form action="/jobboard2/admin/crud-employments/actions/store.php" method="post">
+<form action="/jobboard2/Job-Board/admin/crud-employments/actions/store.php" method="post">
     <input type="text" name="name">
     <input type="submit" value="Create">
 </form>

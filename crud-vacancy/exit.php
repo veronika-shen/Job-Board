@@ -2,4 +2,4 @@
 
 session_start();
 unset($_SESSION['company_id']);
-header('Location: /jobboard2/');
+header('Location: /jobboard2/Job-Board/');
